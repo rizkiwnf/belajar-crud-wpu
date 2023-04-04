@@ -12,7 +12,7 @@
     </style>
 </head>
 
-<body class="bg-blue-300">
+<body class="">
     <nav class="flex-no-wrap relative flex w-full items-center justify-between bg-neutral-100 py-4 shadow-md shadow-black/5 lg:justify-start"
         data-te-navbar-ref>
         <div class="flex w-full flex-wrap items-center justify-between px-6">
@@ -46,7 +46,7 @@
                             href="/about" data-te-nav-link-ref>Team</a>
                     </li>
                     <li class="lg:pr-2" data-te-nav-item-ref>
-                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $tittle === "Posts" ? 'active' : '' }}"
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $tittle === "All Posts" ? 'active' : '' }}"
                             href="/posts" data-te-nav-link-ref>Projects</a>
                     </li>
                 </ul>
