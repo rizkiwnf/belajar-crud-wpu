@@ -44,6 +44,7 @@ Route::get('/categories/{category:slug}', function(Category $category){
 Route::get('/authors/{author:username}', function(User $author){
     return view('layouts.page.post',[
         'tittle' => "Post By Author : $author->name",
+        'active' => 'posts',
         'posts' => $author->posts->load('category', 'author'),
     ]);
 });

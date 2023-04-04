@@ -4,7 +4,7 @@
         <h3 class="text-xl font-medium mb-2 hover:underline text-center">{{ $post->tittle }} </h3>
         <p class="text-center">By. <a class="text-blue-600"
                 href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <span class="text-blue-600"><a
-                    href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></span>
+                    href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a></span>
         </p>
         <img class="my-3" src="https://source.unsplash.com/1300x400?{{ $post->category->name }}" alt="{{ $post->category->name }}" />
 
