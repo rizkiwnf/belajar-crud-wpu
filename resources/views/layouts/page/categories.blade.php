@@ -1,13 +1,18 @@
 @extends('layouts.main')
 @section('container')
     <p class="text-xl font-medium mb-2">{{ $tittle }}</p>
-    @foreach ($categories as $category)
-            <ul>
-                <li class="bg-white my-4 p-4 rounded-lg">
+    <div class="flex justify-around my-4">
+        @foreach ($categories as $category)
+            <div class="items-center flex">
+                <div class="absolute bg-black grow text-white py-2 w-[20.67rem] text-center opacity-70">
                     <p class="text-xl font-medium mb-2 hover:underline">
                         <a href="/categories/{{ $category->slug }}">{{ $category->name }}</a>
                     </p>
-                </li>
-            </ul>
-    @endforeach
+                </div>
+                <img class="border" src="https://source.unsplash.com/350x350?{{ $category->name }}"
+                    alt="{{ $category->name }}" />
+                
+            </div>
+        @endforeach
+    </div>
 @endsection
