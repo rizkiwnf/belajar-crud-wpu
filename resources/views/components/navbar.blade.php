@@ -38,23 +38,33 @@
                 <!-- Left links -->
                 <ul class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row" data-te-navbar-nav-ref>
                     <li class="lg:pr-2" data-te-nav-item-ref>
-                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700  lg:px-2 {{ $active === "home" ? 'active' : '' }}"
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700  lg:px-2 {{ $active === 'home' ? 'active' : '' }}"
                             href="/" data-te-nav-link-ref>Dashboard</a>
                     </li>
                     <li class="lg:pr-2" data-te-nav-item-ref>
-                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === "about" ? 'active' : '' }}"
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === 'about' ? 'active' : '' }}"
                             href="/about" data-te-nav-link-ref>Team</a>
                     </li>
                     <li class="lg:pr-2" data-te-nav-item-ref>
-                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === "posts" ? 'active' : '' }}"
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === 'posts' ? 'active' : '' }}"
                             href="/posts" data-te-nav-link-ref>Projects</a>
                     </li>
                     <li class="lg:pr-2" data-te-nav-item-ref>
-                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === "categories" ? 'active' : '' }}"
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === 'categories' ? 'active' : '' }}"
                             href="/categories" data-te-nav-link-ref>Categories</a>
                     </li>
                 </ul>
                 <!-- Left links -->
+                <ul class="flex">
+                    <li class="lg:pr-2" data-te-nav-item-ref>
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === 'login' ? 'active' : '' }}"
+                            href="/login" data-te-nav-link-ref>Login</a>
+                    </li>
+                    <li class="lg:pr-2" data-te-nav-item-ref>
+                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === 'register' ? 'active' : '' }}"
+                            href="/register" data-te-nav-link-ref>Register</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

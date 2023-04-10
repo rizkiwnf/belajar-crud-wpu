@@ -6,12 +6,11 @@
             <div class="items-center flex">
                 <div class="absolute bg-black grow text-white py-2 w-[20.67rem] text-center opacity-70">
                     <p class="text-xl font-medium mb-2 hover:underline">
-                        <a href="/categories/{{ $category->slug }}">{{ $category->name }}</a>
+                        <a href="/posts?category={{ $category->slug }}">{{ $category->name }}</a>
                     </p>
                 </div>
                 <img class="border" src="https://source.unsplash.com/350x350?{{ $category->name }}"
                     alt="{{ $category->name }}" />
-                
             </div>
         @endforeach
     </div>
