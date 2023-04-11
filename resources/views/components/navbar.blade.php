@@ -55,16 +55,51 @@
                     </li>
                 </ul>
                 <!-- Left links -->
+
                 <ul class="flex">
-                    <li class="lg:pr-2" data-te-nav-item-ref>
-                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === 'login' ? 'active' : '' }}"
-                            href="/login" data-te-nav-link-ref>Login</a>
-                    </li>
-                    <li class="lg:pr-2" data-te-nav-item-ref>
-                        <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === 'register' ? 'active' : '' }}"
-                            href="/register" data-te-nav-link-ref>Register</a>
-                    </li>
+                    @auth
+                        <div class="relative" data-te-dropdown-ref>
+                            <a class="flex items-center whitespace-nowrap rounded  px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black transition duration-150 ease-in-out   motion-reduce:transition-none"
+                                href="#" type="button" id="dropdownMenuButton2" data-te-dropdown-toggle-ref
+                                aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                                Welcome Back {{ auth()->user()->username }}
+                                <span class="ml-2 w-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="h-5 w-5">
+                                        <path fill-rule="evenodd"
+                                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </a>
+                            <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg [&[data-te-dropdown-show]]:block"
+                                aria-labelledby="dropdownMenuButton2" data-te-dropdown-menu-ref>
+                                <li class="border-b">
+                                    <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400"
+                                        href="/dashboard" data-te-dropdown-item-ref>My Dashboard</a>
+                                </li>
+                                <li>
+                                    <form action="/logout" method="post">
+                                        @csrf
+                                        <button type="submit"
+                                            class="text-left block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400"
+                                            data-te-dropdown-item-ref>Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    @else
+                        <li class="lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === 'login' ? 'active' : '' }}"
+                                href="/login" data-te-nav-link-ref>Login</a>
+                        </li>
+                        <li class="lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700   lg:px-2 {{ $active === 'register' ? 'active' : '' }}"
+                                href="/register" data-te-nav-link-ref>Register</a>
+                        </li>
+                    @endauth
                 </ul>
+
             </div>
         </div>
     </nav>
